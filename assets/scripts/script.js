@@ -2,9 +2,9 @@
 let buttonsContainer = document.querySelector(".buttons-container")
 let buttons = document.querySelectorAll("button");
 let list = document.querySelector(".list-container");
+let li_list = document.querySelectorAll("li");
 
-
-buttonsContainer.addEventListener("click", showList);// делегирование
+buttonsContainer.addEventListener("click", showList);
     
 
 function showList(e) {
@@ -14,12 +14,13 @@ function showList(e) {
             (!button.classList.contains("active"))) return;
 
         for (let btn of buttons) {
-            btn.classList.toggle("active");         // переключатель class="active" между кнопками
-
-            let dataClass =  btn.dataset.action;    // запись значений из 
-            // console.log(dataClass);              // button[data] в 
-            list.classList.toggle(dataClass);       // расширение класса div 
-            // console.log(list.classList)
-            if (!dataClass) return;                 
+            btn.classList.toggle("active");
+            let dataClass =  btn.dataset.action;    
+            if (!dataClass) return;                                    
+            for (let li of li_list) {
+                if (li.children[0].checked !== false) {
+                    li.classList.toggle(dataClass);
+                }
+            }
         }
     }

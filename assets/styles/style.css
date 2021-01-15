@@ -29,19 +29,22 @@ button[data-action="hide"] {
 }
 
 div.list-container {
+  /* overflow: hidden; */
+  /* transition: height 0.3s ease-out; */
+}
+
+/* .show {
+  height: 20px;
+} */
+
+.hide {
+  height: 0px;
   overflow: hidden;
-  transition: height 0.3s ease-out;
-}
-
-div.show {
-  height: 200px;
-}
-
-div.hide {
-  height: 35px;
+  transition: height .3s ease-out;
 }
 
 li {
   list-style-position: inside;
+  height: 20px;
 }
 
