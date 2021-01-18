@@ -28,23 +28,14 @@ button[data-action="hide"] {
   opacity: 1;
 }
 
-div.list-container {
-  /* overflow: hidden; */
-  /* transition: height 0.3s ease-out; */
-}
-
-/* .show {
-  height: 20px;
-} */
-
 .hide {
   height: 0px;
-  overflow: hidden;
-  transition: height .3s ease-out;
+  overflow: hidden;  
 }
 
 li {
   list-style-position: inside;
   height: 20px;
+  transition: height .3s ease-out;
 }
 
