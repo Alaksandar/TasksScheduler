@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles/style.css" />
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/styles/style.css" />
+  <title>Document</title>
 </head>
+
 <body>
 
   <!--У вас имеется исходный код HTML и СSS вам необходимо сделать кнопки на этой странице кликабельными. Надо написать по сути JS код
@@ -13,46 +15,65 @@
     "Скрыть список" становилась неактивной, как кнопка "Показать список" в самом начале, а кнопка "Показать список" становится активной, 
     как была кнопка "Скрыть список". При нажатии на кнопку "Показать список" ваш список должен раскрываться при условии, что он был скрыт до этого.
     Для решения этой задачи можно воспользоваться всеми рассмотренными примерами на прошлом занятии, как вспомогательный код-->
+  <div class="wrapper">
+    <div class="container">
 
-  <div class="buttons-container">
-    <button data-action="show">Показать список</button>
-    <button data-action="hide" class="active">Скрыть список</button>
-  </div>
-   
-  <div class="list-container">
-    <ul>
-      Список дел студента:
-      <li>
-        <input type="checkbox" id="1">
-        <label for="1">Поучить польский</label>
-      </li>
-      <li>
-        <input type="checkbox" id="2">
-        <label for="2">Повторить пройденный материал по JS</label> 
-      </li>
-      <li>
-        <input type="checkbox" id="3">
-        <label for="3">Посмотреть уроки по DOM на YouTube</label>
-      </li>
-      <li>
-        <input type="checkbox" id="4">
-        <label for="4">Изучить статьи на learnjavascript.ru</label>
-      </li>
-      <li>
-        <input type="checkbox" id="5">
-        <label for="5">Выполнить ДЗ по JS</label>
-      </li>
-      <li>
-        <input type="checkbox" id="6">
-        <label for="6">Поучить английский</label>
-      </li>
-      <li>
-        <input type="checkbox" id="7">
-        <label for="7">Фронтенд: интересные статьи и видео</label>
-      </li>
-    </ul>
-  </div> 
+
+      <div class="container__form">
+        <div class="form-container">
+          <form id="formElem" method="post" action="#">
+            <input type="text" name="toList" id="" placeholder="Добавить дело в список" value="">
+            <input type="submit" value="Добавить">
+          </form>
+        </div>
+      </div>
     
-    <script src="./assets/scripts/script.js"></script>
+    
+      <div class="container__main">
+        <div class="buttons-container">
+          <button data-action="show">Показать список</button>
+          <button data-action="hide" class="active">Скрыть список</button>
+        </div>
+
+        <div class="list-container">
+          <ul>
+            <p>Список дел:</p>
+            <li>
+              <input type="checkbox" id="1">
+              <label for="1">Поучить польский</label>
+            </li>
+            <li>
+              <input type="checkbox" id="2">
+              <label for="2">Повторить пройденный материал по JS</label>
+            </li>
+            <li>
+              <input type="checkbox" id="3">
+              <label for="3">Посмотреть уроки по DOM на YouTube</label>
+            </li>
+            <li>
+              <input type="checkbox" id="4">
+              <label for="4">Изучить статьи на learnjavascript.ru</label>
+            </li>
+            <li>
+              <input type="checkbox" id="5">
+              <label for="5">Выполнить ДЗ по JS</label>
+            </li>
+            <li>
+              <input type="checkbox" id="6">
+              <label for="6">Поучить английский</label>
+            </li>
+            <li>
+              <input type="checkbox" id="7">
+              <label for="7">Фронтенд: интересные статьи и видео</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./assets/scripts/script.js"></script>
 </body>
+
 </html>
