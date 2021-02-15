@@ -27,6 +27,7 @@ function showList(e) {
 }
 
 let formElem = document.querySelector("#formElem");
+let textInput = document.getElementById("textInput");
 
 formElem.onsubmit = (e) => {
     e.preventDefault();
@@ -38,4 +39,5 @@ formElem.onsubmit = (e) => {
     ul_list.append(created_li);
     let x = li_list.length;
     created_li.innerHTML = `<input type="checkbox" id=${x}><label for=${x}>${value.toList}</label>`;
+    textInput.value = "";
 };
