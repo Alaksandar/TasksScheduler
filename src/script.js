@@ -3,8 +3,6 @@ let buttonsContainer = document.querySelector(".buttons-container")
 let buttons = document.querySelectorAll("button");
 let list = document.querySelector(".list-container");
 
-
-buttonsContainer.addEventListener("click", selectActiveBtn);
  
 
 function selectActiveBtn(e) {

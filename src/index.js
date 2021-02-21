@@ -1,0 +1,1 @@
+buttonsContainer.addEventListener("click", selectActiveBtn);
