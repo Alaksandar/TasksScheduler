@@ -189,7 +189,7 @@ li {
   .form-container {padding: 0;}
 }
 
-ul p {
+.list-container p {
   background-color: black;
     color: white;
     text-align: center;

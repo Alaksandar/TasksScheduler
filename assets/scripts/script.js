@@ -36,29 +36,32 @@ function showList(e) {
 }
 
 
-function toLocalStorage(){
-    let todoes = ul_list.innerHTML;
-    localStorage.setItem('todoes', todoes);
-}
+// form.addEventListener("submit", getValueOnSubmit);
+// form.addEventListener("submit", createToDoLi);
+// form.addEventListener("submit", toLocalStorage);
 
+form.addEventListener("submit", formOnSubmit)
 
-form.onsubmit = (e) => {
-
+function formOnSubmit(e) {
     e.preventDefault();
-
-    const formData = new FormData(form);
-    value = Object.fromEntries(formData.entries());
-    if(!value.toList) return;
-
-    createToDoLi();
-
-    textInput.value = "";
-
+    
+    getValueOnSubmit();
+    
     toLocalStorage();
 }
 
+function getValueOnSubmit() {   
+    
+    const formData = new FormData(form);
+    let value = Object.fromEntries(formData.entries());
+    if(!value.toList) return;
+    textInput.value = "";
 
-function createToDoLi() {
+    createToDoLi(value);
+}
+
+
+function createToDoLi(value) {
 
     let created_li = document.createElement("li");
     ul_list.append(created_li);
@@ -74,14 +77,30 @@ function createToDoLi() {
     label.append(document.createTextNode(value.toList));
     created_li.append(label);
 
-    let deleteLiEl = document.createElement("span");
-    deleteLiEl.append(document.createTextNode("x"));
-    created_li.append(deleteLiEl);
-    // ... to be continued
+    let delEl = document.createElement("span");
+    delEl.append(document.createTextNode("x"));
+    created_li.append(delEl);
 
-    
+    delEl.addEventListener('click', removeLi => { 
+        created_li.remove();
+        toLocalStorage();
+
+    })
+    // ... to be continued
 }
 
+ul_list.addEventListener('change', changeHandler);
+
+function changeHandler() {
+    console.log(this.children);
+    toLocalStorage();
+}
+
+
+function toLocalStorage() {
+    let todoes = ul_list.innerHTML;
+    localStorage.setItem('todoes', todoes);
+}
 
 if(localStorage.getItem("todoes")) {
     ul_list.innerHTML = localStorage.getItem("todoes");
